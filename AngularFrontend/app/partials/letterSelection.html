@@ -1,0 +1,46 @@
+<div class="container-fluid" ng-controller="GamePointCtrl">
+  <div class="row"> 
+    <div class="selection-container col-sm-6 col-xs-12">
+      <h2 class="col-sm-12">Kahoot! POINTS</h2>
+      <div class="border btn-group col-sm-12">
+	<h3>ITEMS</h3>
+        <button type="button" class='item-id btn btn-default btn-lg ' 
+		ng-repeat="item in items track by $index" ng-click="addItem($index);" >
+          {{item}}
+        </button>
+      </div>
+    </div>
+    <div class="selected-container col-sm-3 col-xs-12" >
+      <h2 class="col-sm-12">PLAYER ITEMS</h2>
+      <table class="border table table-striped col-sm-12">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody> 
+	  <tr ng-repeat='(key, value) in selectedItems track by $index' ng-click="removeItem(key, $index)">
+	    <td class="item-id">
+	      <div class="btn btn-default btn-sm">
+		{{key}}
+	      </div>
+            </td>
+            <td>{{value}}</td>
+            <td>{{gamePoints[key]}}</td>
+          </tr>	      
+	</tbody>
+      </table>
+      <div class='border col-sm-12'>
+	Bonuses {{gamePoints.totalBonus}}
+      </div>
+      <div class='border col-sm-12'  ng-model="sumTotal">
+	Total {{gamePoints.totalPoints}}
+	<button type="button" class='btn btn-default pull-right' ng-click="newGame()" >
+          New game
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+{   
+    "a":{
+	"points":30, 
+	"bonus":{
+	    "count":3,
+	    "points":100
+	}
+    }, 
+    "b":{
+	"points":40,
+	"bonus":{
+	    "count":2,
+	    "points":90
+	} 
+    }, 
+    "c":{
+	"points":50,
+	"bonus":{
+	    "count":5,
+	    "points":300
+	}
+    }
+}

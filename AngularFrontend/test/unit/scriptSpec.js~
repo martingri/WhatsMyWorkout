@@ -1,0 +1,12 @@
+'use strict';
+
+describe('GamePointCtrl', function(){
+
+    beforeEach(module('gamePointApp'));
+
+    it('should create a games rules object',  inject(function($controller) {
+	var scope = {},
+        ctrl = $controller('GamePointCtrl', {$scope:scope});
+	expect(scope.maxItems).toBe(10);
+    }));
+});
