@@ -2,22 +2,23 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('gamePointApp', [
+var phonecatApp = angular.module('whatsMyWorkoutApp', [
     'ngRoute',
-    'gamePointControllers',
-    'gamePointServices'
+    'ngResource',
+    'whatsMyWorkoutControllers',
+    'whatsMyWorkoutServices'
 ]);
 
 phonecatApp.constant('RULES', false);
 phonecatApp.config(['$routeProvider',
 		    function($routeProvider) {
 			$routeProvider.
-			    when('/game', {
-				templateUrl: 'partials/letterSelection.html',
-				controller: 'GamePointCtrl'
+			    when('/manage-exercises', {
+				templateUrl: 'partials/manage-exercises.html',
+				controller: 'ManageExerciseCtrl'
 			    }).
 			    otherwise({
-				redirectTo: '/game'
+				redirectTo: '/manage-exercises'
 			    });
 		    }]);
 
