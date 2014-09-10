@@ -15,17 +15,17 @@ public class ExerciseController {
     @Autowired
     private ExerciseRepository repository;
  
-    @RequestMapping (method = RequestMethod.DELETE, value = "/{exercise}")
-    @ResponseBody void deleteExercise(@PathVariable String exercise) {
-        repository.delete(exercise);
+    @RequestMapping (method = RequestMethod.DELETE, value = "/{exerciseId}")
+    @ResponseBody void deleteExercise(@PathVariable String exerciseId) {
+        repository.delete(exerciseId);
     }
  
-    @RequestMapping (method = RequestMethod.GET, value = "/{exercise}")
-    @ResponseBody Exercise getExercise(@PathVariable String exercise) {
-        return repository.findById(exercise);
+    @RequestMapping (method = RequestMethod.GET, value = "/{exerciseId}")
+    @ResponseBody Exercise getExercise(@PathVariable String exerciseId) {
+        return repository.findById(exerciseId);
     }
   
-    @RequestMapping (method = RequestMethod.POST, value = "/{name}")
+    @RequestMapping (method = RequestMethod.POST, value = "")
     public void addExercise(@PathVariable String name) {
         Exercise exercise = new Exercise(name);
         repository.save(exercise);
@@ -38,7 +38,7 @@ public class ExerciseController {
         repository.save(exercise);
     }
 
-    @RequestMapping (method = RequestMethod.GET, value = "/all")
+    @RequestMapping (method = RequestMethod.GET, value = "")
     public List<Exercise> getAllExercises() {
         List<Exercise> exerciseList = repository.findAll();
         return exerciseList;

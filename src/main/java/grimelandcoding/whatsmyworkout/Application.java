@@ -2,6 +2,8 @@ package grimelandcoding.whatsmyworkout;
 
 import grimelandcoding.whatsmyworkout.model.Exercise;
 import grimelandcoding.whatsmyworkout.repository.ExerciseRepository;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,8 +27,7 @@ public class Application implements CommandLineRunner {
         repository.deleteAll();
 
         // save a couple of exercises
-        repository.save(new Exercise("Alice"));
-        repository.save(new Exercise("Bob"));
+        createExercises();
 
         // fetch all exercises
         System.out.println("Exercises found with findAll():");
@@ -42,4 +43,29 @@ public class Application implements CommandLineRunner {
         System.out.println(repository.findByName("Alice"));
    }
 
+    private void createExercises(){
+            Exercise newExercise = new Exercise();
+            newExercise.setName("Air squat");
+            List<String> muscleList = new ArrayList<String>();
+            muscleList.add("Glut");
+            muscleList.add("Quads");
+            newExercise.setMuscles(muscleList);
+            newExercise.setLight(10);
+            newExercise.setMedium(50);
+            newExercise.setHard(150);
+            repository.save(newExercise);
+            newExercise = new Exercise();
+            newExercise.setName("Push up");
+            
+            muscleList = new ArrayList<String>();
+            muscleList.add("Chest");
+            muscleList.add("Triceps");
+            muscleList.add("Traps");
+            newExercise.setMuscles(muscleList);
+            newExercise.setLight(5);
+            newExercise.setMedium(20);
+            newExercise.setHard(50);
+            repository.save(newExercise);
+    
+    }
 }

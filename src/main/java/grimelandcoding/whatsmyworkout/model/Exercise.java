@@ -6,6 +6,7 @@
 
 package grimelandcoding.whatsmyworkout.model;
 
+import java.util.List;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -18,7 +19,15 @@ public class Exercise {
     private String id;
 
     private String name;
-    
+
+    private List<String> muscles;
+
+    private Integer light;
+
+    private Integer medium;
+
+    private Integer hard;
+
     public Exercise() {}
 
     public Exercise(String name) {
@@ -46,6 +55,38 @@ public class Exercise {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<String> getMuscles() {
+        return muscles;
+    }
+
+    public void setMuscles(List<String> muscles) {
+        this.muscles = muscles;
+    }
+
+    public Integer getLight() {
+        return light;
+    }
+
+    public void setLight(Integer light) {
+        this.light = light;
+    }
+
+    public Integer getMedium() {
+        return medium;
+    }
+
+    public void setMedium(Integer medium) {
+        this.medium = medium;
+    }
+
+    public Integer getHard() {
+        return hard;
+    }
+
+    public void setHard(Integer hard) {
+        this.hard = hard;
     }
 
 }
