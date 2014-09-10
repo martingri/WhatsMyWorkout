@@ -1,0 +1,37 @@
+<section id="exercise" class="container content-section text-center"
+         ng-controller="ManageExerciseCtrl">  
+  <div class="container-fluid exercise-section">
+    <div class="row col-sm-6" ng-repeat="(key, exercise) in exercises track by $index" ng-click="removeItem(key);">
+      <h2>
+	{{ exercise.name }}	      
+      </h2>
+      <h3>
+	{{ exercise.id }}
+      </h3>
+      <div class="col-sm-12 pull-right">
+        <h3 ng-repeat="muscle in exercise.muscles track by $index">
+	{{ muscle }}		      
+	</h3>
+	<button type="button" class="btn btn-default btn-xs showdetails collapsed" 
+		data-toggle="collapse" data-target="#view-lead-developer-description">
+	  <span class="fa fa-angle-double-down"></span>
+	  <span class="fa fa-angle-double-up"></span>
+	</button>
+      </div>
+    </div>
+      <button type="button" class='btn btn-default pull-right' ng-click="reloadExercises()" >
+          Reload Exercises
+        </button>
+      
+  </div>
+  <div>
+    <form novalidate class="simple-form">
+      Name: <input type="text" ng-model="exercise.name" /><br />
+      Light reps: <input type="text" ng-model="exercise.light" /><br />
+      Medium reps: <input type="text" ng-model="exercise.medium" /><br />
+      Hard reps: <input type="text" ng-model="exercise.hard" /><br />
+      <button type="button" class='btn btn-default' ng-click="reset()">RESET</button>
+      <button type="button" class='btn btn-default' ng-click="update(user)">SAVE</button>
+    </form>
+  </div>
+</section>
