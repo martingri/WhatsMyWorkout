@@ -1,0 +1,7 @@
+{   
+    scheme: 'tabata',
+    timeScheme: '20 seconds work, 10 seconds rest',
+    expectedTime: 4800,
+    rounds: 2,
+    exercises:['squats','push ups']
+}
