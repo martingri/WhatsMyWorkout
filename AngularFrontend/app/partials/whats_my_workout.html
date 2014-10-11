@@ -1,0 +1,41 @@
+<div class="parent-center-center-1">
+  <div class="parent-center-center-2">
+    <div class="parent-center-center-3">
+      <div class="child-center-center">
+
+	<div ng-if='!workout' class="col-sm-12">
+          <input type="submit" id="generateWorkoutButton" ng-click="generateWorkout()" class="btn btn-primary" value="What's my workout?!"/>      </div>
+
+	<div ng-if='workout' class="col-sm-12">
+	  <h2>Workout</h2>
+	  <div class="col-sm-12">
+	    <h4>Scheme:</h4>
+	    <h3>{{workout.scheme}}</h3>
+	  </div>
+	  <div class="col-sm-12">
+	    <h4>Time Scheme:</h4>
+	    <h3>{{workout.timeScheme}}</h3>
+	  </div>
+	  <div class="col-sm-12">
+	    <h4>Expected time:</h4>
+	    <h3>{{workout.expectedTime}}</h3>
+	  </div>
+	  <div class="col-sm-12 center">
+	    <h4>Rounds:</h4>
+	    <h3>{{workout.rounds}}</h3>
+	  </div>
+	  <div class="col-sm-12">
+	    <h4>Exercises:</h4>
+	    <h3 ng-repeat="exercise in workout.exercises track by $index" >
+	      {{ exercise }}</h3>
+	  </div>
+
+	  <div class="col-sm-12 child-center-center">
+	    <input type="submit" class="col-sm-offset-4 col-sm-4 btn btn-primary" value="Fuck yeah! Lets go!"/>
+	    <input type="submit" ng-click="generateWorkout()" class="col-sm-offset-4 col-sm-4 btn btn-primary" value="Hell no! What's my workout?!"/>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div> 
+</div>
